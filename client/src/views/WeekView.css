@@ -1,0 +1,71 @@
+.week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.week-label {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.week-range {
+  color: var(--text-faint);
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.score-number {
+  font-size: 40px;
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.score-number .unit {
+  font-size: 16px;
+  color: var(--text-faint);
+}
+
+.score-detail {
+  color: var(--text-dim);
+  font-size: 12.5px;
+}
+
+.progress-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+  margin-top: 6px;
+  min-width: 200px;
+  flex: 1;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-dim);
+}
+
+.day-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.day-heading {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-dim);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}

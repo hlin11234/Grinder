@@ -1,0 +1,96 @@
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.app-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-logo {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.app-logo .dot {
+  color: var(--accent);
+}
+
+.app-nav {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+
+.app-nav button {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.app-nav button:hover {
+  color: var(--text);
+}
+
+.app-nav button.active {
+  background: var(--bg-elevated);
+  color: var(--accent-strong);
+}
+
+.app-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-faint);
+}
+
+.status-dot.live {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(143, 174, 143, 0.15);
+}
+
+.status-dot.paused {
+  background: var(--warn);
+  box-shadow: 0 0 0 3px rgba(201, 161, 95, 0.15);
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.error-banner {
+  background: rgba(192, 122, 110, 0.12);
+  border: 1px solid var(--danger);
+  color: var(--danger-strong);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+}

@@ -1,0 +1,51 @@
+.settings-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 320px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.category-row button {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-row button:hover {
+  color: var(--danger-strong);
+}
+
+.add-category-row {
+  display: flex;
+  gap: 6px;
+}
+
+.export-row {
+  display: flex;
+  gap: 8px;
+}
+
+.save-note {
+  color: var(--accent);
+  font-size: 12px;
+  height: 16px;
+}

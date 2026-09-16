@@ -1,0 +1,103 @@
+:root {
+  --bg: #14161a;
+  --bg-panel: #191c21;
+  --bg-elevated: #21252c;
+  --bg-inset: #101215;
+  --border: #2b313a;
+  --border-soft: #23272f;
+
+  --text: #c7cdd6;
+  --text-dim: #7c8494;
+  --text-faint: #565d6a;
+
+  --accent: #8fae8f;
+  --accent-strong: #a8c8a8;
+  --accent-dim: #5c7562;
+
+  --warn: #c9a15f;
+  --danger: #c07a6e;
+  --danger-strong: #d99688;
+
+  --radius-sm: 3px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Consolas,
+    "Liberation Mono", monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 8px 10px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-dim);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+::placeholder {
+  color: var(--text-faint);
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: #0c0d0f;
+}
+
+/* scrollbars, muted */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}

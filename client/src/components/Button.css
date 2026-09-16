@@ -1,0 +1,55 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 7px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  transition: color 0.12s ease, background 0.12s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-bracket {
+  color: var(--text-faint);
+  transition: color 0.12s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--bg-elevated);
+  color: var(--accent-strong);
+}
+
+.btn:hover:not(:disabled) .btn-bracket {
+  color: var(--accent-dim);
+}
+
+.btn:active:not(:disabled) {
+  background: var(--bg-inset);
+}
+
+.btn:disabled {
+  color: var(--text-faint);
+  cursor: not-allowed;
+}
+
+.btn-accent {
+  color: var(--accent);
+}
+.btn-accent .btn-bracket {
+  color: var(--accent-dim);
+}
+
+.btn-danger {
+  color: var(--danger);
+}
+.btn-danger .btn-bracket {
+  color: var(--danger);
+  opacity: 0.55;
+}
+
+.btn-ghost {
+  color: var(--text-dim);
+}

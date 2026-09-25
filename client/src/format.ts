@@ -19,6 +19,12 @@ export function formatClock(iso: string): string {
   return d.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
 }
 
+// Trims a trailing ".0" so whole-number goals/hours print cleanly.
+export function formatGoalNumber(n: number): string {
+  const rounded = Math.round(n * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
 export function todayString(): string {
   const d = new Date();
   const pad = (n: number) => String(n).padStart(2, "0");

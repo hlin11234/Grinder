@@ -61,10 +61,14 @@ export function TodayView({
   async function guarded(fn: () => Promise<unknown>) {
     try {
       await fn();
-      onChange();
-      await refreshToday();
+      setError(null);
     } catch (err) {
       setError((err as Error).message);
+    } finally {
+      // Always resync with the server, even on failure, so the UI can never
+      // get stuck showing a session the server no longer considers active.
+      onChange();
+      await refreshToday();
     }
   }
 
@@ -218,14 +222,14 @@ export function TodayView({
 
       {modal.kind === "end" && active && (
         <EndSessionModal
-          description={active.description}
+          description={description}
           onClose={() => setModal({ kind: "none" })}
           onEnd={(data) =>
             guarded(async () => {
-              if (data.description !== active.description) {
-                await api.updateSession(active.id, { description: data.description });
-              }
+              // End first: this must go through even if the description
+              // patch below fails, or the session is never actually closed.
               await api.endSession(active.id, data.endTime);
+              await api.updateSession(active.id, { description: data.description });
             })
           }
         />

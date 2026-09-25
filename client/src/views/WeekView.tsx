@@ -5,7 +5,7 @@ import { Button } from "../components/Button";
 import { CategoryPieChart } from "../components/CategoryPieChart";
 import { SessionCard } from "../components/SessionCard";
 import { EditSessionModal } from "../components/EditSessionModal";
-import { formatDay, formatHoursMinutes } from "../format";
+import { formatDay, formatGoalNumber, formatHoursMinutes } from "../format";
 import { shiftWeekId, weekIdToRange } from "../week";
 import type { Settings, WeekSummary, WorkSession } from "../types";
 import "./WeekView.css";
@@ -77,11 +77,11 @@ export function WeekView() {
         <div className="score-row">
           <div>
             <div className="score-number">
-              {week.score}
-              <span className="unit">/100</span>
+              {formatGoalNumber(week.netHours)}
+              <span className="unit">/{formatGoalNumber(week.goalHours)}h</span>
             </div>
             <div className="score-detail">
-              {formatHoursMinutes(week.netSeconds)} of {week.goalHours}h goal
+              {formatHoursMinutes(week.netSeconds)} of {formatGoalNumber(week.goalHours)}h goal
             </div>
           </div>
           <div className="progress-track">
